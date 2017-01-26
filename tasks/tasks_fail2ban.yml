@@ -14,7 +14,7 @@
 
   - name: File2Ban | local fail2ban jail config
     template: src="{{file2ban_jaillocal_template}}" dest=/etc/fail2ban/jail.local
-    when: file2ban_jaillocal_template
+    when: file2ban_jaillocal_template is defined
     become: yes
     tags:
       - file2ban
