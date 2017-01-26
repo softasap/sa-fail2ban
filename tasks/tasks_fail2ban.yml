@@ -28,6 +28,7 @@
 
   - name: File2Ban |  Reload fail2ban
     service: name=fail2ban state=restarted enabled="yes"
+    when: docker_test is not defined
     become: yes
     tags:
       - file2ban
