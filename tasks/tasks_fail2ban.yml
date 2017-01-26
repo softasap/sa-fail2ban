@@ -21,7 +21,7 @@
 
   - name: File2Ban | Whitelist control hosts /etc/hosts.allow
     lineinfile: dest='/etc/hosts.allow' line='{{item}}' insertafter="EOF" create=yes state=present
-    with_items: "{{file2ban_whitelisted_hosts | default[]}}"
+    with_items: "{{file2ban_whitelisted_hosts | default([])}}"
     become: yes
     tags:
       - denyhosts
