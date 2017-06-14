@@ -16,4 +16,4 @@ ignoreip = 127.0.0.1/8 {% if whitelistedips is defined %} {% for host in whiteli
 
 findtime = 300
 
-bantime  = -1
+bantime  = {{file2ban_ban_time | default("-1")}}
